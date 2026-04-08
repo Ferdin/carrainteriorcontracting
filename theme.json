@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "settings": {
+    "border": {
+      "radius": true,
+      "color": true,
+      "style": true,
+      "width": true
+    },
+    "blocks": {
+      "core/separator": {
+        "border": {
+          "width": true,
+          "color": true,
+          "style": true
+        }
+      }
+    }
+  }
+}

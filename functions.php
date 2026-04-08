@@ -138,13 +138,6 @@ add_action('customize_preview_init', 'carra_interior_customize_preview_js');
 
 function carra_enqueue_scripts() {
     wp_enqueue_script(
-        'carra-menu',
-        get_template_directory_uri() . '/js/menu.js',
-        [],
-        null,
-        true
-    );
-    wp_enqueue_script(
         'bootstrap-js',
         'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
         [],
@@ -183,4 +176,5 @@ add_filter('wp_resource_hints', 'carra_add_preconnect_fonts', 10, 2);
 
 add_theme_support( 'editor-style' );
 add_theme_support( 'align-wide' );
+add_theme_support( 'appearance-tools' );
 ?>

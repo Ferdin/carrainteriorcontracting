@@ -9,3 +9,35 @@
   font-size: 28.13px;
   color: #a98a6f;
 }
+
+.carra-subsection {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.carra-section-titles {
+  font-weight: 600;
+  font-size: 28.13px;
+  color: #000000;
+}
+
+.lets-connect-btn .wp-block-button__link {
+  border-radius: 0px;
+  border: 2px solid transparent;
+  transition: background 0.3s ease;
+}
+
+.lets-connect-btn .wp-block-button__link:hover {
+  border: 2px solid black;
+  color: black;
+  background: none !important;
+}
+
+.carra-buttons-margin {
+  margin-top: 1rem;
+}
+
+.carra-divider {
+  width: 36%;
+  opacity: 1;
+}
