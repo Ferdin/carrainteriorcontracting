@@ -1,0 +1,107 @@
+/* Black */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("PlayfairDisplay-Black.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Bold */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("PlayfairDisplay-Bold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Medium */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("PlayfairDisplay-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Regular */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("PlayfairDisplay-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Thin */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("PlayfairDisplay-Thin.ttf") format("ttf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Light */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("PlayfairDisplay-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Black */
+@font-face {
+  font-family: "PlayfairDisplayMono";
+  src: url("PlayfairDisplayMono-Black.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Bold */
+@font-face {
+  font-family: "PlayfairDisplayMono";
+  src: url("PlayfairDisplayMono-Bold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Medium */
+@font-face {
+  font-family: "PlayfairDisplayMono";
+  src: url("PlayfairDisplayMono-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Regular */
+@font-face {
+  font-family: "PlayfairDisplayMono";
+  src: url("PlayfairDisplayMono-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Thin */
+@font-face {
+  font-family: "PlayfairDisplayMono";
+  src: url("PlayfairDisplayMono-Thin.ttf") format("ttf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
+
+/* Light */
+@font-face {
+  font-family: "PlayfairDisplayMono";
+  src: url("PlayfairDisplayMono-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; /* optional, improves performance */
+}
