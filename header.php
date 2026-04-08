@@ -23,9 +23,22 @@
                     <?php } 
                 ?>
             </div>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <i class="bi bi-list"></i>
-            </button>
+            <div class="site-nav-icon-container"> 
+                <?php 
+                    $image = get_theme_mod('header_custom_image');
+
+                    if ($image) : ?>
+                        <img src="<?php echo esc_url($image); ?>" alt="Header Image" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <?php endif; ?>
+            </div>
+        </div>
+    </header>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
             <nav class="main-nav">
                 <?php
                     wp_nav_menu( [
@@ -37,5 +50,8 @@
                 ?>
             </nav>
         </div>
-    </header>
-    <main class="site-main na-sitewide-padding"></main>
+    </div>
+    <div>
+        
+    </div>
+    <main class="site-main">

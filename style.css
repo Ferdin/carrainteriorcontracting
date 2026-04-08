@@ -57,6 +57,60 @@ body {
 }
 
 .site-branding .custom-logo-link img {
-  width: 25%;
+  width: 55%;
   height: 50%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav-icon-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-nav-icon-container img {
+  cursor: pointer;
+  width: 20%;
+  opacity: 80%;
+}
+
+.site-nav-icon-container img:hover {
+  opacity: 100%;
+}
+
+.offcanvas-header {
+  margin-top: 3rem;
+  margin-right: 3rem;
+}
+
+.offcanvas .main-nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto";
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.offcanvas .main-nav ul li a:hover {
+  color: white;
+}
+
+.offcanvas .main-nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  padding-left: 0;
+}
+
+.offcanvas-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
