@@ -11,5 +11,52 @@
 */
 
 * {
-    font-family: 'playfair-display';
+  font-family: "playfair-display";
+}
+
+body {
+  margin: auto;
+}
+
+.na-sitewide-padding {
+  padding: 0.5rem 5rem;
+}
+
+@media screen and (min-width: 1831px) {
+  .na-sitewide-padding {
+    padding: 0.5rem 15rem;
+  }
+
+  .na-column-height {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1470px) and (max-width: 1830px) {
+  .na-sitewide-padding {
+    padding: 0.5rem 15rem;
+  }
+
+  .na-column-height {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1190px) and (max-width: 1469px) {
+  .na-sitewide-padding {
+    padding: 0.5rem 20rem;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.site-branding .custom-logo-link img {
+  width: 25%;
+  height: 50%;
 }

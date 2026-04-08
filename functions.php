@@ -20,8 +20,7 @@ add_action( 'after_setup_theme', 'carra_interior_theme_setup' );
 
 function carra_interior_theme_enqueue_styles() {        
     // Custom fonts
-    wp_enqueue_style( 'norbert_academy_theme_font_css', get_template_directory_uri() . '/fonts/fonts.css', array(), '2.0' );
-    wp_enqueue_style( 'norbert_academy_theme_custom_css', get_template_directory_uri() . '/styles/custom.css', array(), '2.0' );
+    wp_enqueue_style( 'norbert_academy_theme_custom_css', get_template_directory_uri() . '/styles/custom.css', [], '2.0' );
     wp_enqueue_style(
         'typekit-fonts',
         'https://use.typekit.net/jlx5ibz.css',
@@ -37,3 +36,55 @@ function na_allow_svg_uploads($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'na_allow_svg_uploads');
+
+function carra_interior_theme_customize_register($wp_customize){
+
+    // Section
+    $wp_customize->add_section('header_section', [
+        'title'     => 'Header Settings',
+        'priority'  => 30,
+    ]);
+
+    $wp_customize->add_setting('header_bg_color', [
+        'default'   => '#ffffff',
+        'transport' => 'postMessage',
+    ]);
+
+    // Control
+    $wp_customize->add_control(new WP_Customize_Color_Control(
+        $wp_customize,
+        'header_bg_color_control',
+        [
+            'label'     => 'Header Background Color',
+            'section'   => 'header_section',
+            'settings'  => 'header_bg_color',
+        ]
+    ));
+}
+
+add_action('customize_register', 'carra_interior_theme_customize_register');
+
+function carra_interior_header_customizer_css() {
+    $bg_color = get_theme_mod('header_bg_color', '#ffffff');
+    ?>
+    <style>
+        .site-header {
+            background-color: <?php echo esc_attr($bg_color); ?>;
+        }
+    </style>
+    <?php
+}
+
+add_action('wp_head', 'carra_interior_header_customizer_css');
+
+function carra_interior_customize_preview_js() {
+    wp_enqueue_script(
+        'customizer-preview',
+        get_template_directory_uri() . '/js/customizer.js',
+        array('customize-preview'),
+        null,
+        true
+    );
+}
+
+add_action('customize_preview_init', 'carra_interior_customize_preview_js');
