@@ -22,6 +22,12 @@ function carra_interior_theme_enqueue_styles() {
     // Custom fonts
     wp_enqueue_style( 'norbert_academy_theme_font_css', get_template_directory_uri() . '/fonts/fonts.css', array(), '2.0' );
     wp_enqueue_style( 'norbert_academy_theme_custom_css', get_template_directory_uri() . '/styles/custom.css', array(), '2.0' );
+    wp_enqueue_style(
+        'typekit-fonts',
+        'https://use.typekit.net/jlx5ibz.css',
+        array(),
+        null
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'carra_interior_theme_enqueue_styles' );

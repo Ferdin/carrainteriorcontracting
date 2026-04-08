@@ -9,3 +9,7 @@
  Tags: simple, boilerplate, minimal
  Text Domain: carra-interior
 */
+
+* {
+    font-family: 'playfair-display';
+}
