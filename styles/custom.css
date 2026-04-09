@@ -41,3 +41,23 @@
   width: 10rem;
   opacity: 1;
 }
+
+.carra-divider-subheading {
+  border-top: 1px solid;
+  width: 10rem;
+  background-color: #000000;
+  opacity: 1;
+}
+
+.carra-subsection-subheadings {
+  font-weight: 600;
+  font-size: 17.57px;
+}
+
+.btn-margin-top {
+  margin-top: 1rem !important;
+}
+
+.carra-margin-adjustor {
+  margin-top: 2rem !important;
+}

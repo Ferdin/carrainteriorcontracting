@@ -177,4 +177,37 @@ add_filter('wp_resource_hints', 'carra_add_preconnect_fonts', 10, 2);
 add_theme_support( 'editor-style' );
 add_theme_support( 'align-wide' );
 add_theme_support( 'appearance-tools' );
+
+// Register custom modal button block
+function carra_register_modal_button_block() {
+    wp_register_script(
+        'carra-modal-button',
+        get_template_directory_uri() . '/blocks/modal-button/index.js',
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components' ),
+        filemtime( get_template_directory() . '/blocks/modal-button/index.js' )
+    );
+
+    wp_register_script(
+        'carra-modal-button-frontend',
+        get_template_directory_uri() . '/blocks/modal-button/frontend.js',
+        array( 'jquery' ),
+        filemtime( get_template_directory() . '/blocks/modal-button/frontend.js' ),
+        true // load in footer
+    );
+    
+    wp_register_style(
+        'carra-modal-button-style',
+        get_template_directory_uri() . '/blocks/modal-button/style.css',
+        array(),
+        filemtime( get_template_directory() . '/blocks/modal-button/style.css' )
+    );
+
+    register_block_type( 'carra/modal-button', array(
+        'editor_script' => 'carra-modal-button',
+        'style'         => 'carra-modal-button-style',
+        'view_script'   => 'carra-modal-button-frontend',
+    ) );
+}
+add_action( 'init', 'carra_register_modal_button_block' );
+
 ?>
