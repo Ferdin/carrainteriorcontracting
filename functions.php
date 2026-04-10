@@ -210,4 +210,87 @@ function carra_register_modal_button_block() {
 }
 add_action( 'init', 'carra_register_modal_button_block' );
 
+function carra_enqueue_lightbox() {
+    wp_enqueue_style(
+        'glightbox-css',
+        'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'
+    );
+    wp_enqueue_script(
+        'glightbox-js',
+        'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js',
+        array(),
+        null,
+        true // load in footer
+    );
+    wp_enqueue_script(
+        'carra-lightbox-init',
+        get_template_directory_uri() . '/js/lightbox-init.js',
+        array( 'glightbox-js' ),
+        filemtime( get_template_directory() . '/js/lightbox-init.js' ),
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'carra_enqueue_lightbox' );
+
+function carra_video_gallery( $atts ) {
+    $atts = shortcode_atts( array(
+        'ids' => '',
+    ), $atts );
+
+    // Manual video items — add as many as needed
+    $videos = array(
+        array(
+            'thumb'  => get_template_directory_uri() . '/images/video-thumb-1.jpg',
+            'src'    => 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID',
+            'title'  => 'Video Title 1',
+        ),
+        array(
+            'thumb'  => get_template_directory_uri() . '/images/video-thumb-2.jpg',
+            'src'    => 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2',
+            'title'  => 'Video Title 2',
+        ),
+    );
+
+    ob_start();
+    ?>
+    <div class="carra-video-gallery">
+        <?php foreach ( $videos as $video ) : ?>
+            <div class="carra-video-item">
+                <a href="<?php echo esc_url( $video['src'] ); ?>" class="glightbox" data-type="video">
+                    <div class="carra-video-thumb">
+                        <img src="<?php echo esc_url( $video['thumb'] ); ?>" alt="<?php echo esc_attr( $video['title'] ); ?>">
+                        <div class="carra-play-btn">&#9654;</div>
+                    </div>
+                    <p><?php echo esc_html( $video['title'] ); ?></p>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'carra_video_gallery', 'carra_video_gallery' );
+
+function carra_register_video_gallery_block() {
+    wp_register_script(
+        'carra-video-gallery',
+        get_template_directory_uri() . '/blocks/video-gallery/index.js',
+        array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'),
+        filemtime(get_template_directory() . '/blocks/video-gallery/index.js')
+    );
+
+    wp_register_style(
+        'carra-video-gallery-style',
+        get_template_directory_uri() . '/blocks/video-gallery/style.css',
+        array(),
+        filemtime(get_template_directory() . '/blocks/video-gallery/style.css')
+    );
+
+    register_block_type('carra/video-gallery', array(
+        'editor_script' => 'carra-video-gallery',
+        'style'         => 'carra-video-gallery-style',
+    ));
+}
+add_action('init', 'carra_register_video_gallery_block');
+
 ?>
