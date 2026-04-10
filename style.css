@@ -115,3 +115,70 @@ body {
   align-items: center;
   height: 100%;
 }
+
+.carra-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Left — Logo */
+.carra-footer-logo img {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.carra-footer-site-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Middle — Copyright */
+.carra-footer-copy {
+  text-align: center;
+  flex: 1;
+}
+
+.carra-footer-copy p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Right — Social Icons */
+.carra-footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carra-footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carra-footer-copy {
+    order: 3;
+  }
+
+  .carra-footer-logo {
+    order: 1;
+  }
+
+  .carra-footer-social {
+    order: 2;
+  }
+}
+
+.site-footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}

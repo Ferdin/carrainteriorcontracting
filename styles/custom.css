@@ -38,15 +38,19 @@
 }
 
 .carra-divider {
-  width: 10rem;
-  opacity: 1;
+  width: 10rem !important;
+  opacity: 1 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .carra-divider-subheading {
-  border-top: 1px solid;
-  width: 10rem;
-  background-color: #000000;
-  opacity: 1;
+  border-top: 1px solid !important;
+  width: 10rem !important;
+  background-color: #000000 !important;
+  opacity: 1 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .carra-subsection-subheadings {
@@ -60,6 +64,7 @@
 
 .carra-margin-adjustor {
   margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .wpcf7-form input,
@@ -74,8 +79,8 @@
   resize: none;
 }
 
-.wpcf7-form.wpcf7-submit {
-  background: #000000;
+.wpcf7-submit {
+  background: #000000 !important;
   color: white;
 }
 

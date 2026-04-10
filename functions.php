@@ -103,6 +103,55 @@ function carra_interior_theme_customize_register($wp_customize){
             'settings'  => 'nav_bg_color',
         ]
     ));
+    // ── Footer Section ────────────────────────────────────
+    $wp_customize->add_section( 'carra_footer_section', array(
+        'title'    => __( 'Footer Settings' ),
+        'priority' => 100,
+    ) );
+
+    // Footer Background Color
+    $wp_customize->add_setting( 'footer_bg_color', array(
+        'default'           => '#000000',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage', // live preview
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control(
+        $wp_customize,
+        'footer_bg_color',
+        array(
+            'label'   => __( 'Footer Background Color' ),
+            'section' => 'carra_footer_section',
+        )
+    ) );
+
+    // Footer Text Color
+    $wp_customize->add_setting( 'footer_text_color', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control(
+        $wp_customize,
+        'footer_text_color',
+        array(
+            'label'   => __( 'Footer Text Color' ),
+            'section' => 'carra_footer_section',
+        )
+    ) );
+
+    // Footer Logo
+    $wp_customize->add_setting( 'footer_logo', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control(
+        $wp_customize,
+        'footer_logo',
+        array(
+            'label'   => __( 'Footer Logo' ),
+            'section' => 'carra_footer_section',
+        )
+    ) );
 }
 
 add_action('customize_register', 'carra_interior_theme_customize_register');
@@ -292,5 +341,23 @@ function carra_register_video_gallery_block() {
     ));
 }
 add_action('init', 'carra_register_video_gallery_block');
+
+// Register footer social widget area
+function carra_register_widget_areas() {
+    register_sidebar( array(
+        'name'          => __( 'Footer Social Icons' ),
+        'id'            => 'footer-social-widget',
+        'description'   => __( 'Add your Social Links block here.' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+    ) );
+}
+add_action( 'widgets_init', 'carra_register_widget_areas' );
+
+function carra_setup() {
+    add_theme_support( 'widgets-block-editor' ); // enables block widgets
+    add_theme_support( 'wp-block-styles' );
+}
+add_action( 'after_setup_theme', 'carra_setup' );
 
 ?>
