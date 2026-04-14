@@ -16,6 +16,7 @@
 
 body {
   margin: auto;
+  opacity: 0;
 }
 
 .na-sitewide-padding {
@@ -49,7 +50,11 @@ body {
 
 @media (min-width: 1190px) and (max-width: 1469px) {
   .na-sitewide-padding {
-    padding: 0.5rem 20rem;
+    padding: 0.5rem 10rem;
+  }
+
+  .carra-hero-main-img img{
+    height: 650px!important;
   }
 }
 
@@ -60,6 +65,17 @@ body {
 .site-branding .custom-logo-link img {
   width: 55%;
   height: 50%;
+}
+
+@media (max-width: 781px){
+.site-branding .custom-logo-link img {
+  width: 100%;
+}
+
+.carra-main-title {
+    margin-top: 3rem;
+}
+  
 }
 
 .header-container {
@@ -181,4 +197,21 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
+}
+
+@media (min-width: 781px){
+.carra-hero-section {
+  align-items: center !important;
+  height: 100vh;
+}
+
+.carra-subsections-height {
+  align-items: center !important;
+  height: 100vh;
+}
+
+}
+ 
+.carra-img-pan-down img{
+  object-position: center 4%;
 }

@@ -1,5 +1,6 @@
 /* Button */
 .carra-modal-btn {
+  margin-top: 1rem;
   padding: 12px 24px;
   color: white;
   border: 2px solid transparent;
@@ -48,4 +49,8 @@
   .carra-modal-body-inner {
     flex-direction: column;
   }
+}
+
+.modal-content{
+  background-color: #E3DCD4!important;
 }

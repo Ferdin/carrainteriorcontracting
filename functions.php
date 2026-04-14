@@ -194,6 +194,8 @@ function carra_enqueue_scripts() {
         true
     );
     wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', [], false, true );
+     wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js', ['gsap-js'], false, true );
+    wp_enqueue_script('custom-anim', get_theme_file_uri('/js/animation.js'), ['gsap-st'], null, true);
 }
 add_action('wp_enqueue_scripts', 'carra_enqueue_scripts');
 
