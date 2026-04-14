@@ -326,7 +326,7 @@ function carra_register_video_gallery_block() {
     wp_register_script(
         'carra-video-gallery',
         get_template_directory_uri() . '/blocks/video-gallery/index.js',
-        array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'),
+        array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-data'),
         filemtime(get_template_directory() . '/blocks/video-gallery/index.js')
     );
 
@@ -340,6 +340,15 @@ function carra_register_video_gallery_block() {
     register_block_type('carra/video-gallery', array(
         'editor_script' => 'carra-video-gallery',
         'style'         => 'carra-video-gallery-style',
+        'attributes'    => array(
+        'videos' => array(
+            'type'    => 'array',
+            'default' => array(),
+            'items'   => array(
+                'type' => 'object',
+            ),
+        ),
+    ),
     ));
 }
 add_action('init', 'carra_register_video_gallery_block');
