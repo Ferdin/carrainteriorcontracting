@@ -51,6 +51,10 @@
   }
 }
 
-.modal-content{
-  background-color: #E3DCD4!important;
+.modal-content {
+  background-color: #e3dcd4 !important;
+}
+
+.carra-no-modal-image {
+  padding: 2rem 4rem;
 }

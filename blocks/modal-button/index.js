@@ -303,23 +303,24 @@
                 el(
                   "div",
                   { className: "carra-modal-body-inner" },
-
-                  // Left — Image
-                  el(
-                    "div",
-                    { className: "carra-modal-image" },
-                    attributes.imageUrl
-                      ? el("img", {
+                  // Left — Image (only rendered when an image URL exists)
+                  attributes.imageUrl
+                    ? el(
+                        "div",
+                        { className: "carra-modal-image" },
+                        el("img", {
                           src: attributes.imageUrl,
                           alt: attributes.imageAlt,
-                        })
-                      : null,
-                  ),
+                        }),
+                      )
+                    : null,
 
                   // Right — Content
                   el(
                     "div",
-                    { className: "carra-modal-content" },
+                    {
+                      className: `${attributes.imageUrl ? "" : "carra-no-modal-image"} carra-modal-content`,
+                    }, //"carra-modal-content"
                     el(RichText.Content, {
                       tagName: "div",
                       value: attributes.modalContent,
